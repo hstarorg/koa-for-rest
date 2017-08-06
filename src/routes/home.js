@@ -8,4 +8,6 @@ const router = new Router({
 
 router.get('/', homeBiz.getHome);
 
+router.post('/login', homeBiz.doLogin);
+
 module.exports = router;

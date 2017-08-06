@@ -9,6 +9,12 @@ const TEST_SCHEMA = {
   property2: Joi.string().required()
 };
 
+const LOGIN_SCHEMA = {
+  username: Joi.string().min(4).max(20).required(),
+  password: Joi.string().min(4).max(20).required()
+};
+
 module.exports = {
-  TEST_SCHEMA
+  TEST_SCHEMA,
+  LOGIN_SCHEMA
 };
