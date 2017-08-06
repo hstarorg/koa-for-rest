@@ -1,0 +1,48 @@
+{
+  "name": "koa-for-rest",
+  "version": "0.1.0",
+  "description": "The koa template for rest api.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp4 dev",
+    "build": "gulp4 build",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hstarorg/koa-for-rest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hstarorg/koa-for-rest/issues"
+  },
+  "dependencies": {
+    "formidable": "^1.1.1",
+    "joi": "^10.6.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-cors": "0.0.16",
+    "koa-error": "^3.0.1",
+    "koa-helmet": "^3.2.0",
+    "koa-logger": "^3.0.1",
+    "koa-response-time": "^2.0.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
+    "koa-static-cache": "^5.1.1",
+    "lru-cache": "^4.1.1",
+    "uid-safe": "^2.1.4",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.2",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-newer": "^1.3.0",
+    "gulp4": "^4.0.1",
+    "jest": "^20.0.4",
+    "node-notifier": "^5.1.2",
+    "shelljs": "^0.7.8"
+  },
+  "homepage": "https://github.com/hstarorg/koa-for-rest#readme"
+}
