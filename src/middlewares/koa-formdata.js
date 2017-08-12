@@ -13,7 +13,7 @@ const formdata = () => {
       await new Promise((resolve, reject) => {
         form.parse(ctx.req, function (err, fields, files) {
           if (err) {
-            return ctx.throwError(err);
+            return ctx.throw(err);
           }
           ctx.request.files = files;
           ctx.request.fields = fields;
