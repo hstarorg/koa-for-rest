@@ -20,11 +20,21 @@ class SQLiteClient {
   }
 
   executeNonQuery(sql, params) {
-    return this._execute('run', sql, params);
+    return this._execute('run', sql, params)
+      .then(result => {
+        return result.changes;
+      });
   }
 
   executeScalar(sql, params) {
     return this._execute('get', sql, params);
+  }
+
+  executeInsert(sql, params) {
+    return this._execute('run', sql, params)
+      .then(result => {
+        return result.lastID;
+      });
   }
 
   _execute(type, sql, params) {
