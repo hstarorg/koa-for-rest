@@ -28,6 +28,10 @@ app.use(static(util.root('../', 'uploads'), {
 // Load routes
 util.loadRoutes(app, config.routesPath);
 
+process.on('uncaughtException', err => {
+  console.error('super exception', err);
+});
+
 // Startup
 const server = app.listen(config.port, err => {
   let addr = server.address();
