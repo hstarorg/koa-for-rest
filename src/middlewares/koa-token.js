@@ -1,4 +1,6 @@
 const uid = require('uid-safe');
+
+// 内存数据库
 const MemoryStore = require('./MemoryStore');
 
 const defaults = {
