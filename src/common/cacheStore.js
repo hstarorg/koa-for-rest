@@ -1,3 +1,4 @@
+// 最近最少使用算法，一个缓存组件
 const LRU = require('lru-cache');
 
 const options = {

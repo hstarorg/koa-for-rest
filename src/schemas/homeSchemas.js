@@ -1,3 +1,5 @@
+// 一个表单验证插件
+// https://github.com/hapijs/joi/blob/v10.6.0/API.md
 const Joi = require('joi');
 
 const rules = {
