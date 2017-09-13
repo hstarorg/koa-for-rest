@@ -28,7 +28,7 @@ app.use(cors());
 app.use(bodyParser());
 // 自定义的token生成中间件
 app.use(koaToken());
-// 自定义格式数据的中间件
+// 自定义 处理文件上传 的中间件
 app.use(formdata());
 // 静态资源中间件
 app.use(static(util.root('../', 'uploads'), {

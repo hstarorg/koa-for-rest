@@ -10,7 +10,7 @@ module.exports = {
   // 设着路由的加载地址
   routesPath: path.join(__dirname, 'routes'),
   // sqliteConnectionString: path.join(__dirname, '../src', 'database', 'Test.sqlite'),
-  // 是否开启数据库事务选项
+  // 是否打印sql语句 （enablePrintDbSQL）
   enableDbTrace: true,
   downloadHost: 'http://localhost:889/files'
 };

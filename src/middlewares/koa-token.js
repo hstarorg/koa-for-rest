@@ -1,6 +1,6 @@
 const uid = require('uid-safe');
 
-// 内存数据库
+// 内存存储
 const MemoryStore = require('./MemoryStore');
 
 // 设着数据库保存时间
@@ -19,7 +19,7 @@ let tokenOptions;
 
 /** 
  * 注意，对于存储token的过程，因为可能是外在的数据库，需要异步处理，因此这个地方所有的存储过程都为异步方法
- *在内存数据库中，虽然存储是同步的，但是为了兼容使用Promise.reslove处理为异步操作 
+ *在内存存储中，虽然存储是同步的，但是为了兼容使用Promise.reslove处理为异步操作 
  *额外的数据库需要实现set,get方法
 */
 
@@ -27,7 +27,7 @@ let tokenOptions;
 const tokenFn = options => {
   // 配置参数
   let opts = Object.assign({}, defaults, options);
-  // 如果没有制定数据库，则使用内存数据库
+  // 如果没有制定数据库，则使用内存存储
   opts.store = opts.store || new MemoryStore(opts);
   // 将配置参数缓存到全局 ？？
   tokenOptions = opts;
