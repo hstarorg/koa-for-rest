@@ -13,7 +13,7 @@ beforeAll(async () => {
     database: 'TestDB'
   });
   db = new MysqlClient(pool);
-  await db.executeNonQuery(`CREATE TABLE MysqlTestTable(Id INT NOT NULL AUTO_INCREMENT, Name VARCHAR(50) NOT NULL, Age INT NOT NULL, PRIMARY KEY (Id));`);
+  await db.executeNonQuery(`CREATE TABLE MysqlTestTable(Id INT NOT NULL AUTO_INCREMENT, Name VARCHAR(50) NOT NULL, Age INT NOT NULL, test_field INT, PRIMARY KEY (Id));`);
 });
 
 afterAll(async () => {
@@ -102,5 +102,14 @@ describe('error tests', () => {
       expect(e).toHaveProperty('errno');
       expect(e.code).toBe('ER_NO_DEFAULT_FOR_FIELD');
     }
+  });
+});
+
+describe('test the _ field', () => {
+  test('add a data with param', async () => {
+    let param = { test_field: 1 };
+    await db.executeNonQuery(`UPDATE MysqlTestTable SET test_field = @test_field`, param);
+    let count = (await db.executeScalar(`SELECT COUNT(0) AS TotalCount FROM MysqlTestTable WHERE test_field=@test_field;`, param)).TotalCount;
+    expect(count).toBe(3);
   });
 });

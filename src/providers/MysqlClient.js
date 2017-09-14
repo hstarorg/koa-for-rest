@@ -171,7 +171,7 @@ class MysqlClient {
       let paramArr = [];
       if (params) {
         let paramKeys = Object.keys(params);
-        sqlString = sqlString.replace(/@[a-zA-Z0-9]+/g, (match, offset, str) => {
+        sqlString = sqlString.replace(/@[a-zA-Z0-9_]+/g, (match, offset, str) => {
           let matchKey = match.replace('@', '');
           if (paramKeys.indexOf(matchKey) >= 0) {
             paramArr.push(params[matchKey]);
