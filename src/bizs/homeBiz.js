@@ -1,6 +1,7 @@
 const { util } = require('../common');
 const { homeSchemas } = require('../schemas');
 
+// 具体的业务层，对应JAVA中的service层
 const getHome = async ctx => {
   ctx.body = {
     key: 'Hello'
